@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "MyStrings.h"
 
 int main() {
 	printf("hello, world!\n");
@@ -18,7 +19,7 @@ int main() {
 	printf("%s%s", myString, pointingToStringLiteral);
 	printf("Mysterious string: %s\n", mysteriousString);
 
-	char tight[5] = "hello"; // Not enough space for null char?
+	char tight[]/*[5]*/ = "hello"; // Not enough space for null char? stack buffer overflow
 	printf("%d\n", strlen(tight));
 
 	/* Useful reading material :
@@ -36,4 +37,6 @@ int main() {
 	* Pointers: asterisk on the left or right side?
 	* https://stackoverflow.com/a/2660818
 	*/
+
+	runExample();
 }

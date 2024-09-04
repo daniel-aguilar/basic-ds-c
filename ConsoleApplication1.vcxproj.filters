@@ -18,5 +18,13 @@
     <ClCompile Include="ConsoleApplication1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyStrings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyStrings.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
