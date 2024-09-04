@@ -15,15 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.c">
+    <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyStrings.c">
+    <ClCompile Include="MallocStrings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StringBasics.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyStrings.h">
+    <ClInclude Include="MallocStrings.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringBasics.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

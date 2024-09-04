@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.c" />
-    <ClCompile Include="MyStrings.c" />
+    <ClCompile Include="Main.c" />
+    <ClCompile Include="MallocStrings.c" />
+    <ClCompile Include="StringBasics.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyStrings.h" />
+    <ClInclude Include="MallocStrings.h" />
+    <ClInclude Include="StringBasics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
