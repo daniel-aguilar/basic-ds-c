@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="list.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="MallocStrings.c" />
     <ClCompile Include="StringBasics.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="list.h" />
     <ClInclude Include="MallocStrings.h" />
     <ClInclude Include="StringBasics.h" />
   </ItemGroup>
