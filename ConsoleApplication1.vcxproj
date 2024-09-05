@@ -132,11 +132,13 @@
     <ClCompile Include="Main.c" />
     <ClCompile Include="MallocStrings.c" />
     <ClCompile Include="StringBasics.c" />
+    <ClCompile Include="tree.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="list.h" />
     <ClInclude Include="MallocStrings.h" />
     <ClInclude Include="StringBasics.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
