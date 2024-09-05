@@ -40,19 +40,31 @@ int get(node_t *list, int index) {
 	return head->value;
 }
 
-void *print(node_t *list) {
-	// [1, 2, 3]
-	printf("[");
-	int len = size(list);
-	for (int i = 0; i < len; i++) {
-		int num = get(list, i);
-		printf("%d", num);
+char* toString(node_t* list) {
+	node_t* head = list;
+	char* result = malloc(1 + 1);
+	strcpy(result, "[");
 
-		if (i + 1 < len) {
-			printf(", ");
+	while (head->next != NULL) {
+		head = head->next;
+
+		char str[3];
+		sprintf(str, "%d", head->value);
+
+		int len = strlen(result) + strlen(str);
+		result = realloc(result, len + 1);
+		strcat(result, str);
+
+		result = realloc(result, strlen(result) + 2 + 1);
+		if (head->next != NULL) {
+			strcat(result, ", ");
+		}
+		else {
+			strcat(result, "]");
 		}
 	}
-	printf("]\n");
+
+	return result;
 }
 
 void add(node_t *list, int e) {
@@ -80,5 +92,5 @@ void runListExercise() {
 	printf("Item: %d\n", get(myList, 2));
 	printf("Item: %d\n", get(myList, 3));
 
-	print(myList);
+	printf("List: %s\n", toString(myList));
 }
