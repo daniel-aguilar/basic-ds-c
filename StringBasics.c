@@ -1,14 +1,13 @@
 #include "StringBasics.h"
 
 void runBasics() {
-	// In C, string are an array of char, with a NUL at the end.
+	// In C, string are an array of char, with a NULL character at the end.
 	// The contents of myString are in memory and can be changed
 	char myString[] = "Dhis is a string literal, null terminated\n";
 	myString[0] = 'T';
 
-	// This is a constant, you may not change the contents of memory here.
-	// This is essentially a constant
-	char* pointingToStringLiteral = "This is also a null terminated string literal\n";
+	// This is a string literal pointer, you may not change the contents of memory here.
+	char *pointingToStringLiteral = "This is also a null terminated string literal\n";
 
 	char mysteriousString[25]; // String filled with garbage, we did not assign any values here.
 	mysteriousString[24] = '\0'; // Try commenting out this line
