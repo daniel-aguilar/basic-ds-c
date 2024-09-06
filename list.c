@@ -40,9 +40,9 @@ int get(node_t *list, int index) {
 	return head->value;
 }
 
-char* toString(node_t* list) {
-	node_t* head = list;
-	char* result = malloc(1 + 1);
+char *toString(node_t *list) {
+	node_t *head = list;
+	char *result = malloc(1 + 1);
 	strcpy(result, "[");
 
 	while (head->next != NULL) {
@@ -81,7 +81,7 @@ void add(node_t *list, int e) {
 }
 
 void runListExercise() {
-	node_t* myList = newList();
+	node_t *myList = newList();
 	add(myList, 1);
 	add(myList, 2);
 	add(myList, 3);

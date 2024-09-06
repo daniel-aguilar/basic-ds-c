@@ -3,57 +3,57 @@
 #include "tree.h"
 
 typedef struct node_t {
-	struct node_t* root;
+	struct node_t *root;
 	int value;
-	struct link_t* children;
+	struct link_t *children;
 } node_t;
 
 typedef struct link_t {
-	struct node_t* value;
-	struct link_t* next;
+	struct node_t *value;
+	struct link_t *next;
 } link_t;
 
-link_t* makeLink(void) {
-	link_t* newLink = malloc(sizeof(link_t));
+link_t *makeLink(void) {
+	link_t *newLink = malloc(sizeof(link_t));
 	newLink->value = NULL;
 	newLink->next = NULL;
 	return newLink;
 }
 
-void addLink(link_t* list, node_t* node) {
-	link_t* newLink = makeLink();
+void addLink(link_t *list, node_t *node) {
+	link_t *newLink = makeLink();
 	newLink->value = node;
 
-	link_t* head = list;
+	link_t *head = list;
 	while (head->next != NULL) {
 		head = head->next;
 	}
 	head->next = newLink;
 }
 
-node_t* makeNode(int n) {
-	node_t* node = malloc(sizeof(node_t));
+node_t *makeNode(int n) {
+	node_t *node = malloc(sizeof(node_t));
 	node->root = NULL;
 	node->value = n;
 	node->children = makeLink();
 	return node;
 }
 
-void addChild(node_t* tree, int n) {
-	node_t* leaf = makeNode(n);
+void addChild(node_t *tree, int n) {
+	node_t *leaf = makeNode(n);
 	leaf->root = tree;
 	addLink(tree->children, leaf);
 }
 
-void forEach(link_t* list, void (*callback)(const node_t* node)) {
-	link_t* head = list;
+void forEach(link_t *list, void (*callback)(const node_t *node)) {
+	link_t *head = list;
 	while (head->next != NULL) {
 		head = head->next;
 		callback(head->value);
 	}
 }
 
-void printNode(const node_t* node) {
+void printNode(const node_t *node) {
 	int value = node->value;
 
 	if (node->root != NULL) {
@@ -67,7 +67,7 @@ void printNode(const node_t* node) {
 }
 
 void runTreeExercise(void) {
-	node_t* tree = makeNode(1);
+	node_t *tree = makeNode(1);
 	addChild(tree, 2);
 	addChild(tree, 3);
 	printNode(tree);
