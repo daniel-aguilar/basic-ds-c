@@ -6,12 +6,12 @@
 
 struct node {
 	int value;
-	struct node_t *next;
+	node_t *next;
 };
 
 node_t *newList() {
 	node_t *list = malloc(sizeof(node_t));
-	list->value = NULL;
+	list->value = 0;
 	list->next = NULL;
 	return list;
 }
@@ -30,7 +30,7 @@ int size(node_t *list) {
 int get(node_t *list, int index) {
 	if (index + 1 > size(list)) {
 		printf("WARN: Index out of bounds\n");
-		return NULL;
+		return 0;
 	}
 
 	node_t *head = list;

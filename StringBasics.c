@@ -1,4 +1,6 @@
 #include "StringBasics.h"
+#include <stdio.h>
+#include <string.h>
 
 void runBasics() {
 	// In C, string are an array of char, with a NULL character at the end.
@@ -16,7 +18,8 @@ void runBasics() {
 	printf("Mysterious string: %s\n", mysteriousString);
 
 	char tight[]/*[5]*/ = "hello"; // Not enough space for null char? stack buffer overflow
-	printf("%d\n", strlen(tight));
+	int len = strlen(tight);
+	printf("%d\n", len);
 
 	/* Useful reading material :
 	* Basic definitions, compiler behaviour:

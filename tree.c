@@ -2,13 +2,13 @@
 #include <stdio.h>
 #include "tree.h"
 
-typedef struct node {
+typedef struct node_t {
 	struct node_t* root;
 	int value;
 	struct link_t* children;
 } node_t;
 
-typedef struct link {
+typedef struct link_t {
 	struct node_t* value;
 	struct link_t* next;
 } link_t;
@@ -20,7 +20,7 @@ link_t* makeLink(void) {
 	return newLink;
 }
 
-void addLink(const link_t* list, node_t* node) {
+void addLink(link_t* list, node_t* node) {
 	link_t* newLink = makeLink();
 	newLink->value = node;
 
@@ -39,13 +39,13 @@ node_t* makeNode(int n) {
 	return node;
 }
 
-void addChild(const node_t* tree, int n) {
+void addChild(node_t* tree, int n) {
 	node_t* leaf = makeNode(n);
 	leaf->root = tree;
 	addLink(tree->children, leaf);
 }
 
-void forEach(const link_t* list, void (*callback)(node_t* node)) {
+void forEach(link_t* list, void (*callback)(const node_t* node)) {
 	link_t* head = list;
 	while (head->next != NULL) {
 		head = head->next;
