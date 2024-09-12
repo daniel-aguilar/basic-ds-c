@@ -3,7 +3,8 @@
 #include <string.h>
 
 void runBasics() {
-	// In C, string are an array of char, with a NULL character at the end.
+	// In C, string are an array of char, with a NUL (the character with integer
+	// value 0) at the end.
 	// The contents of myString are in memory and can be changed
 	char myString[] = "Dhis is a string literal, null terminated\n";
 	myString[0] = 'T';
